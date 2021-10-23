@@ -6,7 +6,15 @@
 
     <groupId>com.lx</groupId>
     <artifactId>Linx-Rpc</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>rpc-server</module>
+        <module>rpc-client</module>
+        <module>rpc-common</module>
+        <module>rpc-registry</module>
+        <module>rpc-registry-zookeeper</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

@@ -6,7 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Linx-Rpc" />
+        <module name="rpc-server" />
+        <module name="rpc-registry" />
+        <module name="rpc-common" />
+        <module name="rpc-client" />
       </profile>
     </annotationProcessing>
   </component>
