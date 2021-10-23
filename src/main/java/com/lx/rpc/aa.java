@@ -6,4 +6,7 @@ package com.lx.rpc;
  * @CreateTime: 2021/10/23 20:17
  */
 public class aa {
+    public static void main(String[] args) {
+
+    }
 }
