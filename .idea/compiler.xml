@@ -9,6 +9,7 @@
         <module name="rpc-server" />
         <module name="rpc-registry" />
         <module name="rpc-common" />
+        <module name="rpc-registry-zookeeper" />
         <module name="rpc-client" />
       </profile>
     </annotationProcessing>
