@@ -23,6 +23,10 @@ public class RpcResponse {
      */
     private Object result;
 
+    public boolean hasException() {
+        return exception != null;
+    }
+
     public String getRequestId() {
         return requestId;
     }
