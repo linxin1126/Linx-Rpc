@@ -35,7 +35,7 @@ public class ZooKeeperServiceDiscovery implements ServiceDiscovery {
             if(!zkClient.exists(servicePath)) {
                 throw new RuntimeException(String.format("can not find any service node on path: %s", servicePath));
             }
-            List<String> addressList = zkClient.getChildren(zkAddress);
+            List<String> addressList = zkClient.getChildren(servicePath);
             if(CollectionUtil.isEmpty(addressList)) {
                 throw new RuntimeException(String.format("can not find any address node on path: %s", servicePath));
             }
