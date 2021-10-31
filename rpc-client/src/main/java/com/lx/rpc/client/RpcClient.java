@@ -1,3 +1,5 @@
+package com.lx.rpc.client;
+
 import com.lx.rpc.common.bean.RpcRequest;
 import com.lx.rpc.common.bean.RpcResponse;
 import com.lx.rpc.common.codec.RpcDecoder;
@@ -30,16 +32,16 @@ public class RpcClient extends SimpleChannelInboundHandler<RpcResponse> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, RpcResponse rpcResponse) throws Exception {
-        this.response = response;
-        ctx.close();
+        this.response = rpcResponse;
     }
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
         LOGGER.error("apo caught exception",cause);
+        ctx.close();
     }
 
-    public RpcResponse send(RpcRequest request) throws InterruptedException {
+    public RpcResponse send(RpcRequest request) throws Exception {
         NioEventLoopGroup workerGroup = new NioEventLoopGroup();
 
         // 创建 Netty 客户端 并初始化
@@ -71,7 +73,5 @@ public class RpcClient extends SimpleChannelInboundHandler<RpcResponse> {
         } finally {
             workerGroup.shutdownGracefully();
         }
-
     }
-
 }
