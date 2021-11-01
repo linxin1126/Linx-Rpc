@@ -23,3 +23,7 @@
 - 服务端异步多线程处理RPC请求
 - 支持不同load balance策略
 - 支持不同序列化/反序列化
+
+## 使用过程：
+
+![Linx-Rpc](/Users/linxin_/Desktop/Linx-Rpc.png)
