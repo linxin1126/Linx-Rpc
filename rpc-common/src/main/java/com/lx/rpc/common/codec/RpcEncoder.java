@@ -19,11 +19,11 @@ public class RpcEncoder extends MessageToByteEncoder {
     }
 
     @Override
-    protected void encode(ChannelHandlerContext ctx, Object in, ByteBuf out) throws Exception {
-        //将字节数组序列化为对象
+    public void encode(ChannelHandlerContext ctx, Object in, ByteBuf out) throws Exception {
+        // 将字节数组序列化为对象
         if (genericClass.isInstance(in)) {
             byte[] data = SerializationUtil.serialize(in);
-            out.writeByte(data.length);
+            out.writeInt(data.length);
             out.writeBytes(data);
         }
     }
